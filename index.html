@@ -2,106 +2,135 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Centro integral de bienestar emocional | Quito</title>
-  <meta name="description" content="Acompañamiento profesional y confidencial en bienestar emocional, desarrollo personal y apoyo psicológico en Quito. Agenda una orientación gratuita." />
+  <meta name="description" content="Acompañamiento profesional, humano y confidencial. Agenda una orientación gratuita." />
   <meta property="og:title" content="Centro integral de bienestar emocional | Quito" />
-  <meta property="og:description" content="Acompañamiento profesional y confidencial en bienestar emocional, desarrollo personal y apoyo psicológico en Quito." />
+  <meta property="og:description" content="Acompañamiento profesional y confidencial en bienestar emocional y desarrollo personal." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_EC" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230ea5e9'/><text x='50' y='58' font-size='54' text-anchor='middle' fill='white'>V</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html { scroll-behavior: smooth; }
-    .shadow-smooth{ box-shadow: 0 10px 25px rgba(0,0,0,.08); }
-    .glass{ background: rgba(255,255,255,.7); backdrop-filter: blur(8px); }
-    details>summary::-webkit-details-marker{ display:none; }
+    html{scroll-behavior:smooth}
+    .shadow-smooth{box-shadow:0 10px 25px rgba(0,0,0,.08)}
+    .glass{background:rgba(255,255,255,.75);backdrop-filter:blur(10px)}
+    details>summary::-webkit-details-marker{display:none}
+    /* small fade-in */
+    @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+    .animate-fadeIn{animation:fadeIn .3s ease-out}
   </style>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Vidas con Propósito (Centro de Bienestar Emocional)",
-    "url": "https://www.vidasconproposito.ec/",
-    "telephone": "+593 99 999 9999",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. Ejemplo N10-10",
-      "addressLocality": "Quito",
-      "addressCountry": "EC"
-    },
-    "areaServed": "Quito, Ecuador",
-    "description": "Acompañamiento profesional y confidencial en bienestar emocional y desarrollo personal."
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Vidas con Propósito (Centro de Bienestar Emocional)",
+    "url":"https://www.vidasconproposito.ec/",
+    "telephone":"+593 99 488 6848",
+    "address":{"@type":"PostalAddress","streetAddress":"Av. Oswaldo Guayasamín 280 y Los Guarangos","addressLocality":"Quito","addressCountry":"EC"},
+    "areaServed":"Quito, Ecuador",
+    "description":"Acompañamiento profesional y confidencial en bienestar emocional y desarrollo personal."
   }
   </script>
 </head>
-<body class="bg-slate-50 text-slate-800">
-  <!-- Top Bar -->
-  <header class="w-full border-b border-slate-200 bg-white/80 sticky top-0 z-40 backdrop-blur">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 font-semibold text-slate-900">
-        <img src="./img/one_logo_vidas_con_proposito.png" alt="Logo Vidas con Propósito" class="h-32 w-auto object-contain" />
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
 
-        <span>Vidas con Propósito</span>
+  <!-- Floating WhatsApp Button + Mini Pop-up -->
+  <div class="fixed bottom-4 right-4 flex flex-col items-end z-50">
+    <div id="wa-popup" class="hidden mb-2 bg-white text-slate-700 text-sm px-3 py-2 rounded-xl shadow-lg border border-slate-200 animate-fadeIn">
+      Hola, estamos aquí para ayudarte
+    </div>
+    <a href="https://wa.me/593994886848?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n"
+       target="_blank"
+       id="wa-button"
+       class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition transform hover:scale-110"
+       aria-label="WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.52 3.48A11.85 11.85 0 0012 .06 11.94 11.94 0 000 12c0 2.11.55 4.16 1.6 5.97L.05 24l6.17-1.61A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 21.6c-1.9 0-3.75-.5-5.37-1.44l-.38-.22-3.67.96.98-3.58-.25-.37A9.6 9.6 0 012.4 12c0-5.3 4.3-9.6 9.6-9.6 2.57 0 4.99 1 6.8 2.8a9.53 9.53 0 012.8 6.8c0 5.3-4.3 9.6-9.6 9.6zm5.31-7.22c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.64.15s-.74.94-.91 1.14c-.17.2-.34.22-.63.07-.29-.15-1.24-.46-2.36-1.47-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.1-.23-.55-.47-.48-.64-.49-.17-.01-.36-.01-.55-.01s-.51.07-.77.36c-.26.29-1 1-1 2.44 0 1.44 1.03 2.83 1.18 3.02.15.19 2.03 3.09 4.93 4.33.69.3 1.23.48 1.65.62.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.24.17-1.37-.07-.13-.26-.2-.55-.35z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Header mobile-first -->
+  <header class="w-full border-b border-slate-200 bg-white/90 sticky top-0 z-40 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <img src="./img/one_logo_vidas_con_proposito.png" alt="Logo Vidas con Propósito" class="h-32 w-auto object-contain" />
+        <span class="sr-only">Vidas con Propósito</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#servicios" class="hover:text-sky-700">Servicios</a>
-        <a href="#equipo" class="hover:text-sky-700">Equipo</a>
-        <a href="#faq" class="hover:text-sky-700">Preguntas</a>
-        <a href="#contacto" class="hover:text-sky-700">Contacto</a>
+      <button id="nav-toggle" aria-label="Abrir menú" class="md:hidden p-2 rounded-lg border border-slate-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+        </svg>
+      </button>
+      <nav id="nav" class="hidden md:flex items-center gap-5 text-sm">
+        <a href="#servicios" class="py-2 hover:text-sky-700">Servicios</a>
+        <a href="#equipo" class="py-2 hover:text-sky-700">Equipo</a>
+        <a href="#faq" class="py-2 hover:text-sky-700">Preguntas</a>
+        <a href="#contacto" class="py-2 hover:text-sky-700">Contacto</a>
+        <a href="#contacto" class="hidden md:inline-flex px-3 py-2 rounded-xl bg-sky-600 text-white hover:bg-sky-700 shadow-smooth">Orientación gratis</a>
       </nav>
-      <a href="#contacto" class="hidden sm:inline-flex px-4 py-2 rounded-xl bg-sky-600 text-white hover:bg-sky-700 shadow-smooth">Orientación gratuita</a>
+    </div>
+    <!-- Mobile drawer -->
+    <div id="drawer" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-3 grid gap-2 text-sm">
+        <a href="#servicios" class="py-2">Servicios</a>
+        <a href="#equipo" class="py-2">Equipo</a>
+        <a href="#faq" class="py-2">Preguntas</a>
+        <a href="#contacto" class="py-2">Contacto</a>
+        <a href="#contacto" class="mt-2 inline-flex justify-center px-3 py-2 rounded-xl bg-sky-600 text-white hover:bg-sky-700">Orientación gratis</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero neutro -->
+  <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-emerald-50"></div>
-    <div class="max-w-6xl mx-auto px-4 py-20 lg:py-28 relative">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
+    <div class="relative max-w-6xl mx-auto px-4 py-10 sm:py-14">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
         <div>
-          <h1 class="text-3xl md:text-5xl font-bold leading-tight text-slate-900">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-slate-900">
             Bienestar emocional y <span class="text-sky-700">desarrollo personal</span> en Quito
           </h1>
-          <p class="mt-5 text-lg text-slate-600 max-w-prose">
-            Acompañamiento profesional, humano y confidencial. Te ayudamos a recuperar equilibrio, mejorar hábitos y fortalecer tus relaciones. Agenda una orientación gratuita y da el primer paso hoy.
+          <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-prose">
+            Acompañamiento profesional, humano y confidencial. Agenda una orientación gratuita y da el primer paso hoy.
           </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#contacto" class="px-5 py-3 rounded-xl bg-sky-600 text-white hover:bg-sky-700 shadow-smooth">Agendar orientación</a>
-            <a href="https://wa.me/593999999999?text=Hola%2C%20quisiera%20una%20orientaci%C3%B3n" class="px-5 py-3 rounded-xl border border-slate-300 hover:border-slate-400">Escríbenos por WhatsApp</a>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#contacto" class="px-5 py-3 rounded-xl bg-sky-600 text-white hover:bg-sky-700 shadow-smooth text-center">Agendar orientación</a>
+            <a href="https://wa.me/593994886848?text=Hola%2C%20quisiera%20una%20orientaci%C3%B3n" class="px-5 py-3 rounded-xl border border-slate-300 hover:border-slate-400 text-center">WhatsApp</a>
           </div>
-          <div class="mt-6 flex flex-wrap gap-4 text-sm text-slate-600">
-            <span class="inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Atención confidencial</span>
-            <span class="inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/></svg> Citas en 24-48h</span>
-            <span class="inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.866-3.582 7-8 7 4.418 0 8-3.134 8-7z"/></svg> Profesionales certificados</span>
-          </div>
+          <ul class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-slate-600">
+            <li class="inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Confidencial</li>
+            <li class="inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/></svg> Citas 24–48h</li>
+            <li class="inline-flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.866-3.582 7-8 7 4.418 0 8-3.134 8-7z"/></svg> Profesionales</li>
+          </ul>
         </div>
-        <div class="glass rounded-2xl p-6 shadow-smooth">
-          <img alt="Ilustración de bienestar y equilibrio" class="rounded-xl w-full h-auto" src="./img/vista_frontal.png"/>
+        <div class="glass rounded-2xl p-3 shadow-smooth">
+          <img alt="Ilustración de bienestar" class="rounded-xl w-full h-auto" src="./img/vista_frontal.png"/>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-16 bg-white">
+  <section id="servicios" class="py-12 sm:py-14 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold">Servicios de apoyo profesional</h2>
-      <p class="mt-2 text-slate-600">Intervenciones basadas en evidencia para tu bienestar.</p>
-      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <article class="p-6 rounded-2xl border border-slate-200 hover:shadow-smooth transition">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Servicios de apoyo profesional</h2>
+      <p class="mt-2 text-slate-600 text-sm sm:text-base">Intervenciones basadas en evidencia para tu bienestar.</p>
+      <div class="mt-8 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <article class="p-5 sm:p-6 rounded-2xl border border-slate-200 hover:shadow-smooth transition">
           <h3 class="font-semibold">Psicoterapia individual</h3>
-          <p class="mt-2 text-sm text-slate-600">Estrategias prácticas para manejar estrés, ansiedad y mejora de hábitos.</p>
+          <p class="mt-2 text-sm text-slate-600">Estrategias prácticas para manejar estrés, ansiedad y hábitos.</p>
         </article>
-        <article class="p-6 rounded-2xl border border-slate-200 hover:shadow-smooth transition">
+        <article class="p-5 sm:p-6 rounded-2xl border border-slate-200 hover:shadow-smooth transition">
           <h3 class="font-semibold">Terapia familiar y de pareja</h3>
-          <p class="mt-2 text-sm text-slate-600">Comunicación efectiva, límites sanos y fortalecimiento de vínculos.</p>
+          <p class="mt-2 text-sm text-slate-600">Comunicación, límites sanos y fortalecimiento de vínculos.</p>
         </article>
-        <article class="p-6 rounded-2xl border border-slate-200 hover:shadow-smooth transition">
+        <article class="p-5 sm:p-6 rounded-2xl border border-slate-200 hover:shadow-smooth transition">
           <h3 class="font-semibold">Programa de hábitos saludables</h3>
-          <p class="mt-2 text-sm text-slate-600">Rutinas de sueño, manejo del tiempo y habilidades socioemocionales.</p>
+          <p class="mt-2 text-sm text-slate-600">Sueño, manejo del tiempo y habilidades socioemocionales.</p>
         </article>
-        <article class="p-6 rounded-2xl border border-slate-200 hover:shadow-smooth transition">
+        <article class="p-5 sm:p-6 rounded-2xl border border-slate-200 hover:shadow-smooth transition">
           <h3 class="font-semibold">Acompañamiento integral</h3>
           <p class="mt-2 text-sm text-slate-600">Plan personalizado con seguimiento y metas medibles.</p>
         </article>
@@ -109,103 +138,96 @@
     </div>
   </section>
 
-  <!-- Sección intermedia neutra con CTA -->
-  <section class="py-16 bg-gradient-to-r from-sky-50 to-emerald-50">
+  <!-- CTA intermedio -->
+  <section class="py-12 sm:py-14 bg-gradient-to-r from-sky-50 to-emerald-50">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6 items-center">
       <div class="md:col-span-2">
-        <h3 class="text-xl md:text-2xl font-semibold">Primera conversación sin costo</h3>
-        <p class="mt-2 text-slate-600 max-w-prose">Agenda una orientación de 20 minutos para conocer tu caso y proponerte un plan inicial, sin compromiso.</p>
+        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Primera conversación sin costo</h3>
+        <p class="mt-2 text-slate-600 text-sm sm:text-base max-w-prose">Agenda una orientación de 20 minutos para conocer tu caso y proponerte un plan inicial, sin compromiso.</p>
       </div>
-      <div class="text-right">
-        <a href="#contacto" class="inline-flex px-5 py-3 rounded-xl bg-sky-600 text-white hover:bg-sky-700 shadow-smooth">Agendar ahora</a>
+      <div class="text-left md:text-right">
+        <a href="#contacto" class="inline-flex px-4 sm:px-5 py-3 rounded-xl bg-sky-600 text-white hover:bg-sky-700 shadow-smooth">Agendar ahora</a>
       </div>
     </div>
   </section>
 
   <!-- Equipo -->
-  <section id="equipo" class="py-16 bg-white">
+  <section id="equipo" class="py-12 sm:py-14 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold">Nuestro equipo</h2>
-      <p class="mt-2 text-slate-600">Profesionales con formación clínica y enfoque humano.</p>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl border border-slate-200">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Nuestro equipo</h2>
+      <p class="mt-2 text-slate-600 text-sm sm:text-base">Profesionales con formación clínica y enfoque humano.</p>
+      <div class="mt-8 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-3">
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="./img/erick.png" alt="Psicólogo" />
+            <img class="h-14 w-14 rounded-full object-cover" src="./one_img/eric.png" alt="Psicólogo" />
             <div>
               <h3 class="font-semibold">Psic. Erick Moreno</h3>
-              <p class="text-sm text-slate-600">Director Técnico</p>
+              <p class="text-xs sm:text-sm text-slate-600">Director Técnico</p>
             </div>
           </div>
         </div>
-        <div class="p-6 rounded-2xl border border-slate-200">
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="/img/vivi.png" alt="Terapeuta" />
+            <img class="h-14 w-14 rounded-full object-cover" src="./one_img/vivi.png" alt="Trabajadora Social" />
             <div>
-              <h3 class="font-semibold">Lic. Viviana Diaz</h3>
-              <p class="text-sm text-slate-600">Trabajadora Social</p>
+              <h3 class="font-semibold">Lic. Viviana Díaz</h3>
+              <p class="text-xs sm:text-sm text-slate-600">Trabajadora Social</p>
             </div>
           </div>
         </div>
-        <div class="p-6 rounded-2xl border border-slate-200">
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="./img/david.png" alt="Coordinadora" />
+            <img class="h-14 w-14 rounded-full object-cover" src="./one_img/david.png" alt="Terapeuta Ocupacional" />
             <div>
               <h3 class="font-semibold">Lic. David Romero</h3>
-              <p class="text-sm text-slate-600">Terapeuta Ocupacional</p>
+              <p class="text-xs sm:text-sm text-slate-600">Terapeuta Ocupacional</p>
             </div>
           </div>
         </div>
-        <div class="p-6 rounded-2xl border border-slate-200">
+
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="./img/alexis.png" alt="Coordinadora" />
+            <img class="h-14 w-14 rounded-full object-cover" src="./one_img/alexis.png" alt="Médico Psiquiatra" />
             <div>
               <h3 class="font-semibold">Dr. Alexis Miranda</h3>
-              <p class="text-sm text-slate-600">Médico Psiquiatra</p>
+              <p class="text-xs sm:text-sm text-slate-600">Médico Psiquiatra</p>
             </div>
           </div>
         </div>
-        <div class="p-6 rounded-2xl border border-slate-200">
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="./img/katherine.png" alt="Coordinadora" />
+            <img class="h-14 w-14 rounded-full object-cover" src="./one_img/katherine.png" alt="Nutricionista" />
             <div>
               <h3 class="font-semibold">Lic. Katherine Cuichan</h3>
-              <p class="text-sm text-slate-600">Nutricionista</p>
+              <p class="text-xs sm:text-sm text-slate-600">Nutricionista</p>
             </div>
           </div>
         </div>
-        <div class="p-6 rounded-2xl border border-slate-200">
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="./img/edixon.png" alt="Coordinadora" />
+            <img class="h-14 w-14 rounded-full object-cover" src="./one_img/edixon.png" alt="Médico General" />
             <div>
               <h3 class="font-semibold">Dr. Edixon Flores</h3>
-              <p class="text-sm text-slate-600">Médico General</p>
+              <p class="text-xs sm:text-sm text-slate-600">Médico General</p>
             </div>
           </div>
         </div>
-        <div class="p-6 rounded-2xl border border-slate-200">
+
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="./img/katherine_condor.png" alt="Coordinadora" />
+            <img class="h-14 w-14 rounded-full object-cover" src="./one_img/katherine_condor.png" alt="Enfermera" />
             <div>
               <h3 class="font-semibold">Tec. Katherine Condor</h3>
-              <p class="text-sm text-slate-600">Enfermera</p>
+              <p class="text-xs sm:text-sm text-slate-600">Enfermera</p>
             </div>
           </div>
         </div>
-        <div class="p-6 rounded-2xl border border-slate-1000">
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="./img/erica.png" alt="Coordinadora" />
+            <img class="h-14 w-14 rounded-full object-cover" src="./one_img/erica.png" alt="Presidenta" />
             <div>
-              <h3 class="font-semibold">Erica Salinas</h3>
-              <p class="text-sm text-slate-600">Presidenta de la fundación</p>
-            </div>
-          </div>
-        </div>
-        <div class="p-6 rounded-2xl border border-slate-1000">
-          <div class="flex items-center gap-4">
-            <img class="h-14 w-14 rounded-full object-cover" src="./img/andres.png" alt="Coordinadora" />
-            <div>
-              <h3 class="font-semibold">Dr./Psic Andrés Ojeda</h3>
-              <p class="text-sm text-slate-600">Psicólogo Clínico</p>
+              <h3 class="font-semibold">Érica Salinas</h3>
+              <p class="text-xs sm:text-sm text-slate-600">Presidenta de la fundación</p>
             </div>
           </div>
         </div>
@@ -213,23 +235,23 @@
     </div>
   </section>
 
-  <!-- Sección profunda (contenido sensible en lenguaje técnico/no invasivo) -->
-  <section id="informacion-especifica" class="py-16 bg-slate-50">
+  <!-- Contenido sensible en colapsables -->
+  <section id="informacion-especifica" class="py-12 sm:py-14 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold">Información para necesidades específicas</h2>
-      <p class="mt-2 text-slate-600 max-w-prose">Si estás buscando apoyo especializado, te compartimos información técnica de forma discreta. Este contenido aparece en una sección expandible para evitar lenguaje invasivo en la parte superior de la página.</p>
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Información para necesidades específicas</h2>
+      <p class="mt-2 text-slate-600 text-sm sm:text-base max-w-prose">Mostramos contenido técnico de forma discreta para cumplir políticas.</p>
 
-      <div class="mt-6 grid md:grid-cols-2 gap-6">
-        <details class="p-5 rounded-2xl border border-slate-200 bg-white group">
+      <div class="mt-6 grid md:grid-cols-2 gap-4 sm:gap-6">
+        <details class="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white group">
           <summary class="cursor-pointer list-none flex items-center justify-between">
             <span class="font-semibold">Consumo problemático y conductas compulsivas</span>
             <span class="text-slate-500 group-open:rotate-180 transition">▼</span>
           </summary>
           <div class="mt-3 text-sm text-slate-600 leading-relaxed">
-            <p>Abordamos patrones de uso que afectan la vida cotidiana con intervenciones graduales: evaluación clínica, psicoeducación, prevención de recaídas y trabajo con la red de apoyo. En casos necesarios, articulamos con médicos externos para evaluación integral.</p>
+            <p>Evaluación clínica, psicoeducación, prevención de recaídas y trabajo con la red de apoyo. Articulamos con médicos externos cuando es necesario.</p>
           </div>
         </details>
-        <details class="p-5 rounded-2xl border border-slate-200 bg-white group">
+        <details class="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white group">
           <summary class="cursor-pointer list-none flex items-center justify-between">
             <span class="font-semibold">Apoyo a familias y cuidadores</span>
             <span class="text-slate-500 group-open:rotate-180 transition">▼</span>
@@ -240,24 +262,24 @@
         </details>
       </div>
 
-      <p class="mt-6 text-xs text-slate-500">Nota: Evitamos términos sensibles en la parte superior del sitio para cumplir políticas de plataformas publicitarias. Si necesitas información directa, contáctanos.</p>
+      <p class="mt-6 text-[11px] text-slate-500">Evitamos términos sensibles en la parte superior del sitio para cumplir políticas publicitarias.</p>
     </div>
   </section>
 
-  <!-- Testimonios breves -->
-  <section class="py-16 bg-white">
+  <!-- Testimonios -->
+  <section class="py-12 sm:py-14 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold">Experiencias de nuestros usuarios</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <figure class="p-6 rounded-2xl border border-slate-200">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Experiencias de nuestros usuarios</h2>
+      <div class="mt-6 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-3">
+        <figure class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <blockquote class="text-sm text-slate-700">“Me sentí escuchado y con un plan claro desde la primera cita.”</blockquote>
           <figcaption class="mt-3 text-xs text-slate-500">Juan • Quito</figcaption>
         </figure>
-        <figure class="p-6 rounded-2xl border border-slate-200">
+        <figure class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <blockquote class="text-sm text-slate-700">“El acompañamiento a mi familia nos devolvió la calma en casa.”</blockquote>
           <figcaption class="mt-3 text-xs text-slate-500">María • Cumbayá</figcaption>
         </figure>
-        <figure class="p-6 rounded-2xl border border-slate-200">
+        <figure class="p-5 sm:p-6 rounded-2xl border border-slate-200">
           <blockquote class="text-sm text-slate-700">“Procesos serios, humanos y discretos. Lo recomiendo.”</blockquote>
           <figcaption class="mt-3 text-xs text-slate-500">Diego • Tumbaco</figcaption>
         </figure>
@@ -265,40 +287,41 @@
     </div>
   </section>
 
-  <!-- Preguntas frecuentes (sin palabras de riesgo) -->
-  <section id="faq" class="py-16 bg-slate-50">
+  <!-- FAQ -->
+  <section id="faq" class="py-12 sm:py-14 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold">Preguntas frecuentes</h2>
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <details class="p-5 rounded-2xl border border-slate-200 bg-white group">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Preguntas frecuentes</h2>
+      <div class="mt-6 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
+        <details class="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white group">
           <summary class="cursor-pointer list-none flex items-center justify-between"><span class="font-semibold">¿Cómo es la primera orientación?</span><span class="text-slate-500 group-open:rotate-180 transition">▼</span></summary>
-          <p class="mt-3 text-sm text-slate-600">Conversación breve para conocer tu situación y proponer un plan inicial. Puede ser presencial u online.</p>
+          <p class="mt-3 text-sm text-slate-600">Conversación breve para conocer tu situación y proponer un plan inicial. Presencial u online.</p>
         </details>
-        <details class="p-5 rounded-2xl border border-slate-200 bg-white group">
+        <details class="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white group">
           <summary class="cursor-pointer list-none flex items-center justify-between"><span class="font-semibold">¿La atención es confidencial?</span><span class="text-slate-500 group-open:rotate-180 transition">▼</span></summary>
           <p class="mt-3 text-sm text-slate-600">Sí. Resguardamos tu privacidad y seguimos estándares profesionales.</p>
         </details>
-        <details class="p-5 rounded-2xl border border-slate-200 bg-white group">
+        <details class="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white group">
           <summary class="cursor-pointer list-none flex items-center justify-between"><span class="font-semibold">¿Atienden a familias?</span><span class="text-slate-500 group-open:rotate-180 transition">▼</span></summary>
           <p class="mt-3 text-sm text-slate-600">Sí, contamos con terapia familiar y entrenamiento para cuidadores.</p>
         </details>
-        <details class="p-5 rounded-2xl border border-slate-200 bg-white group">
+        <details class="p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white group">
           <summary class="cursor-pointer list-none flex items-center justify-between"><span class="font-semibold">¿Atienden urgencias?</span><span class="text-slate-500 group-open:rotate-180 transition">▼</span></summary>
-          <p class="mt-3 text-sm text-slate-600">No somos un servicio de emergencias. Si existe riesgo inmediato, llama al 911 o acude al centro de salud más cercano.</p>
+          <p class="mt-3 text-sm text-slate-600">No somos un servicio de emergencias. Si hay riesgo inmediato, llama al 911 o acude al centro de salud más cercano.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- Contacto / Formulario -->
-  <section id="contacto" class="py-16 bg-white">
+  <!-- Contacto -->
+  <section id="contacto" class="py-12 sm:py-14 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold">Agenda tu orientación gratuita</h2>
-          <p class="mt-2 text-slate-600">Déjanos tus datos y te contactaremos en horario laboral.</p>
-          <form id="lead-form" class="mt-6 p-6 rounded-2xl border border-slate-200">
-            <div class="grid md:grid-cols-2 gap-4">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Agenda tu orientación gratuita</h2>
+          <p class="mt-2 text-slate-600 text-sm sm:text-base">Déjanos tus datos y te contactaremos en horario laboral.</p>
+
+          <form id="lead-form" class="mt-6 p-5 sm:p-6 rounded-2xl border border-slate-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <label class="block text-sm">Nombre
                 <input required name="nombre" class="mt-1 w-full rounded-xl border-slate-300 focus:border-sky-500 focus:ring-sky-500" type="text" placeholder="Tu nombre" />
               </label>
@@ -320,15 +343,19 @@
             <p id="form-status" class="mt-3 text-sm text-emerald-600 hidden">¡Gracias! Hemos recibido tus datos.</p>
           </form>
         </div>
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+
+        <div class="p-5 sm:p-6 rounded-2xl border border-slate-200 bg-slate-50">
           <h3 class="font-semibold">Contacto directo</h3>
           <ul class="mt-3 text-sm text-slate-700 space-y-2">
-            <li>Tel.: <a class="text-sky-700 hover:underline" href="tel:+593999999999">+593 99 488 6848</a></li>
+            <li>Tel.: <a class="text-sky-700 hover:underline" href="tel:+593994886848">+593 99 488 6848</a></li>
             <li>WhatsApp: <a class="text-sky-700 hover:underline" href="https://wa.me/593994886848">+593 99 488 6848</a></li>
-            <li>Dirección: Av. Ejemplo N10-10, Quito</li>
+            <li>Dirección: Av. Oswaldo Guayasamín 280 y Los Guarangos</li>
             <li>Horario: Lun–Vie 9:00–18:00</li>
           </ul>
-          <iframe class="mt-6 w-full h-64 rounded-xl" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.0000000000001!2d-78.4678!3d-0.1807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sQuito!5e0!3m2!1ses-419!2sec!4v1680000000000"></iframe>
+          <div class="mt-6 w-full rounded-xl overflow-hidden">
+            <iframe class="w-full aspect-video" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d689.2461824983396!2d-78.36271486290252!3d-0.21168646346136963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1ses!2sec!4v1756760244154!5m2!1ses!2sec"
+                    style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
           <p class="mt-4 text-xs text-slate-500">La ubicación es referencial. Solicita la dirección exacta al agendar.</p>
         </div>
       </div>
@@ -336,10 +363,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-10 border-t border-slate-200 bg-white">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-6 items-center">
+  <footer class="py-8 border-t border-slate-200 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-4 items-center">
       <p class="text-sm text-slate-600">© <span id="year"></span> Vidas con Propósito. Todos los derechos reservados.</p>
-      <div class="text-sm text-right text-slate-600">
+      <div class="text-sm md:text-right text-slate-600">
         <a class="hover:text-sky-700" href="#faq">Aviso</a>
         <span class="mx-2">•</span>
         <a class="hover:text-sky-700" href="#contacto">Contacto</a>
@@ -347,15 +374,78 @@
     </div>
   </footer>
 
-  <script>
-    // Demo de envío del formulario (sólo front). Reemplazar por fetch a su backend o herramienta de formularios.
-    document.getElementById('lead-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      const status = document.getElementById('form-status');
-      status.classList.remove('hidden');
-      this.reset();
+  <!-- Scripts (defer to avoid blocking) -->
+  <script defer>
+    // Year
+    document.addEventListener('DOMContentLoaded',()=> {
+      const yearEl=document.getElementById('year');
+      if (yearEl) yearEl.textContent=new Date().getFullYear();
     });
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const toggle = document.getElementById('nav-toggle');
+    const drawer = document.getElementById('drawer');
+    if (toggle && drawer){
+      toggle.addEventListener('click', ()=> drawer.classList.toggle('hidden'));
+      drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>drawer.classList.add('hidden')));
+    }
+
+    // WhatsApp mini pop-up
+    const waButton=document.getElementById('wa-button');
+    const waPopup=document.getElementById('wa-popup');
+    if (waButton && waPopup){
+      waButton.addEventListener('mouseenter', ()=> waPopup.classList.remove('hidden'));
+      waButton.addEventListener('mouseleave', ()=> waPopup.classList.add('hidden'));
+      setTimeout(()=>{ waPopup.classList.remove('hidden'); setTimeout(()=>waPopup.classList.add('hidden'), 4000); }, 2000);
+    }
+
+    // Form → WhatsApp integration
+    const WHATSAPP_NUMBER = "593994886848"; // sin + ni 00
+    const $ = (sel, ctx=document)=> ctx.querySelector(sel);
+    const val = (sel)=> ($(sel)?$(sel).value.trim():"");
+
+    function buildWhatsAppMessageFromForm(){
+      const nombre=val('input[name="nombre"]');
+      const telefono=val('input[name="telefono"]');
+      const correo=val('input[name="correo"]');
+      const mensaje=val('textarea[name="mensaje"]');
+      const consent=$('#consent')?.checked;
+
+      if(!consent) return null;
+      const lines=[
+        "Hola, estamos aquí para ayudarte 🙌",
+        nombre?`• Nombre: ${nombre}`:"",
+        telefono?`• Tel/WhatsApp: ${telefono}`:"",
+        correo?`• Correo: ${correo}`:"",
+        mensaje?`• Necesidad: ${mensaje}`:""
+      ].filter(Boolean);
+      return lines.join("\n");
+    }
+
+    function buildWaUrl(text){
+      const encoded=encodeURIComponent(text || "Hola, quisiera más información");
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+    }
+
+    const form=document.getElementById('lead-form');
+    if(form){
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const msg=buildWhatsAppMessageFromForm();
+        const url=buildWaUrl(msg);
+        const status=document.getElementById('form-status');
+        if(status) status.classList.remove('hidden');
+        window.open(url, '_blank');
+        form.reset();
+      });
+    }
+
+    if(waButton){
+      waButton.addEventListener('click', function (){
+        const msg=buildWhatsAppMessageFromForm();
+        this.href=buildWaUrl(msg);
+      });
+    }
   </script>
 </body>
 </html>
